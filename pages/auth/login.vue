@@ -11,10 +11,7 @@ const { setUser, getUser } = useUserStore();
 const login = (e) => {
   e.preventDefault();
   setUser(auth.value);
-  setTimeout(() => {
-    router.push("/auth/profile");
-    console.log("dd");
-  }, 300);
+  router.push("/auth/profile");
 };
 </script>
 <template>
