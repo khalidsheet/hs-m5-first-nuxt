@@ -23,7 +23,7 @@ const login = (e) => {
       <label for="" class="block">Email</label>
       <input
         type="text"
-        class="py-3 px-3"
+        class="py-3 px-3 text-gray-900"
         v-model="auth.email"
         placeholder="Enter your email"
       />
@@ -33,7 +33,7 @@ const login = (e) => {
 
       <input
         type="password"
-        class="py-3 px-3"
+        class="py-3 px-3 text-gray-900"
         v-model="auth.password"
         placeholder="Enter your password"
       />
