@@ -1,7 +1,13 @@
 <script setup>
 import { useUserStore } from "~~/store/userStore";
 
-const { getUser } = useUserStore();
+const { getUser, setUser } = useUserStore();
+const router = useRouter();
+
+const logout = () => {
+  setUser(undefined);
+  router.push("/");
+};
 </script>
 <template>
   <div class="div">
@@ -16,13 +22,17 @@ const { getUser } = useUserStore();
         >
       </li>
       <li>
-        <NuxtLink v-if="getUser() != undefined" to="/auth/logout"
-          >logout</NuxtLink
+        <button
+          class="bg-red-400 p-2 -mt-2 rounded uppercase"
+          v-if="getUser() != undefined"
+          @click="logout()"
         >
+          logout
+        </button>
       </li>
       <li>
         <NuxtLink v-if="getUser() != undefined" to="/auth/profile"
-          >profile</NuxtLink
+          >Profile</NuxtLink
         >
       </li>
     </ul>
